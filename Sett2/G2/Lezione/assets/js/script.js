@@ -46,7 +46,7 @@ function calcolaEta(anno) {
 }
 
 function verifica() {
-	stato = (eta >= 18) ? 'maggiorenne' : 'minorenne';
+	stato = (eta >= 18) ? 'maggiorenne.' : 'minorenne.';
 }
 
 function scrivi(nome) {
