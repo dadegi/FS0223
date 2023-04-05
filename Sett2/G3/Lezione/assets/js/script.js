@@ -39,3 +39,18 @@ document.getElementById('array13').innerHTML = mioArray;
 var nuovoArray = mioArray.slice(1, 4);
 document.getElementById('array14').innerHTML = nuovoArray;
 document.getElementById('padre').innerHTML = mioArray;
+
+const docente = {
+    nome: ['Dario','Anna','Artem'],
+    cognome: 'Del Giudice',
+    anno: 1967,
+    occupato: true,
+    
+    eta: function() {
+      return 2023 - this.anno;
+    },
+    
+    pippo: function() {
+      return this.nome[0] + ' ' + this.cognome + ', età: ' + this.eta() + ', attualmente occupato: ' + this.occupato;
+    }
+  }
