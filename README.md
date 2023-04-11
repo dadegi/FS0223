@@ -1,3 +1,3 @@
 # FS0223
 
-Codici della Unit 1 del corso Epicode FS0223
+Codici ed esercizi del corso Epicode FS0223
