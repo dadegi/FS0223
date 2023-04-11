@@ -328,7 +328,7 @@ function average (tupla) {
     tupla.forEach(element => {
         if (typeof(element) === 'number') {
             media += element;
-            count++
+            count++;
         }
     });
     media = media / count;
@@ -364,7 +364,7 @@ function longest(stringhe) {
 
 console.log('****EXTRA 9****');
 
-var contenuto = 'Questa mail non contiene spam ma informazioni commerciali';
+var contenuto = 'Questa mail contiene informazioni commerciali';
 
 console.log(antiSpam(contenuto));
 
