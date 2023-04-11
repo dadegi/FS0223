@@ -1,8 +1,5 @@
 var btnCalcola = document.getElementById('calcola');
 var btnReset = document.getElementById('reset');
-var operazione;
-var numero1;
-var numero2;
 var risultato;
 var semaforo = true;
 
@@ -19,24 +16,27 @@ function eventHandler() {
 
 function leggi() {
 	btnCalcola.addEventListener('click', function () {
+		let operazione;
+		let numero1;
+		let numero2;
 		operazione = document.getElementById('operazione').value;
 		numero1 = document.getElementById('numero1').value;
 		numero2 = document.getElementById('numero2').value;
 
-		controlla();
-        if (semaforo) {
-            calcola();
-        }
-        if (semaforo) {
-            scrivi();
-            cancellaForm();
-        } else {
-            return;
-        }
+		controlla(operazione, numero1, numero2);
+		if (semaforo) {
+			calcola(operazione, numero1, numero2);
+		}
+		if (semaforo) {
+			scrivi(operazione, numero1, numero2);
+			cancellaForm();
+		} else {
+			return;
+		}
 	});
 }
 
-function controlla() {
+function controlla(operazione, numero1, numero2) {
 	if (operazione == '' || numero1 == '' || numero2 == '') {
 		document.getElementById('risultato').innerHTML =
 			"Attenzione! Compilare correttamente tutti i campi e scegliere un'operazione";
@@ -46,7 +46,7 @@ function controlla() {
 	}
 }
 
-function calcola() {
+function calcola(operazione, numero1, numero2) {
 	numero1 = Number(numero1);
 	numero2 = Number(numero2);
 
@@ -67,17 +67,17 @@ function calcola() {
 			if (numero2 === 0) {
 				document.getElementById('risultato').innerHTML =
 					'Non è possibile effettuare una divisione per 0!';
-                    semaforo = false;
+				semaforo = false;
 				return;
 			} else {
-                semaforo = true;
+				semaforo = true;
 				risultato = numero1 / numero2;
 			}
 			break;
 	}
 }
 
-function scrivi() {
+function scrivi(operazione, numero1, numero2) {
 	switch (operazione) {
 		case 'add':
 			operazione = 'addizione';
