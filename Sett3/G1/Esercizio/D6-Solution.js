@@ -265,13 +265,15 @@ maxShoppingCart();
 function maxShoppingCart() {
     var max = shoppingCart[0].price;
     var myArticle;
-	shoppingCart.map((element) => {
+    var mioIndice;
+	shoppingCart.map((element, i) => {
 		if (element.price > max) {
             max = element.price;
             myArticle = element;
+            mioIndice = i;
 		}
 	});
-    console.log(`L'articolo con il prezzo più alto è ${myArticle.name}, che costa Euro ${max}`);
+    console.log(`L'articolo con il prezzo più alto è ${myArticle.name}, che costa Euro ${max} ed è in posizione ${mioIndice}`);
 }
 
 /* EXTRA 5 Y
