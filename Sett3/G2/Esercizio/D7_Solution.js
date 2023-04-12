@@ -6,7 +6,7 @@
 console.log('****ESERCIZIO 1****');
 
 const concatString = (str1, str2) => {
-    let nuovaStringa = str1.slice(0, 2).concat(str2.slice(str2.length - 3));
+	let nuovaStringa = str1.slice(0, 2).concat(str2.slice(str2.length - 3));
 	return nuovaStringa.toUpperCase();
 };
 
@@ -21,12 +21,30 @@ console.log('****ESERCIZIO 2****');
 const random10 = () => {
 	const array = [];
 	for (let index = 0; index < 10; index++) {
-		array.push(Math.floor(Math.random() * 101));
+		var numero = Math.floor(Math.random() * 101);
+		if (!array.includes(numero)) {
+			array.push(numero);
+		} else {
+			index = index - 1;
+		}
 	}
 	return array;
 };
 
 console.log(random10());
+
+// Soluzione alternativa
+const dieciElementi = [];
+let j = 0;
+while (j < 10) {
+	let casuale = Math.floor(Math.random() * (100 + 1));
+	if (dieciElementi.includes(casuale) === false) {
+		dieciElementi.push(casuale);
+		j++;
+	}
+}
+
+console.log(dieciElementi);
 
 /* ESERCIZIO 3
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici (suggerimento: il metodo filter può aiutare)
