@@ -284,7 +284,7 @@ console.log('****ESERCIZIO 13****');
 const onlyInThisMillennium = (array) => {
 	let result = [];
 	for (let i = 0; i < array.length; i++) {
-		if (parseInt(array[i].Year) > 1999) {
+		if (parseInt(array[i].Year) > 2000) {
 			result.push(array[i]);
 		}
 	}
