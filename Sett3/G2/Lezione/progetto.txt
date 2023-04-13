@@ -27,3 +27,16 @@ PAGINA2
 ERRORE
 1. Messaggio di errore
 2. Link per tornare al login
+
+TODOLIST
+Creare un elenco di cose da fare (task) che possa essere aggiornato con l'aggiunta di nuovi elementi e l'eliminazione di elementi completati.
+
+HTML
+1. campo di input per scrivere i nuovi task con un button per inserirli nella lista
+2. la lista di task con il button per l'eliminazione dei singoli task
+
+JS
+1. al click leggere il campo di input
+2. memorizzare il valore
+3. aggiungere il nuovo task alla lista già esistente con il corrispondente button per l'eliminazione
+4. consentire l'eliminazione di un task al click sul suo button di eliminazione
