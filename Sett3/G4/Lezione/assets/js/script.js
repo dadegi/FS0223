@@ -106,7 +106,7 @@ var btnScegli = document.getElementById('scegli');
 var btnDownload = document.getElementById('download');
 var progressBar = document.getElementById('progressBar');
 var barra;
-var width;
+var larghezza;
 
 window.addEventListener('load', function() {
     document.getElementById('success').style.display = 'none';
@@ -146,17 +146,17 @@ const visualizza = () => {
 btnDownload.addEventListener('click', function() {
     document.getElementById('success').style.display = 'none';
     progressBar.style.display = 'block';
-    width = 5;
+    larghezza = 5;
     barra = setInterval(cresci, 50);
 });
 
 function cresci() {
-    if (width == 500) {
+    if (larghezza == 500) {
         clearInterval(barra);
         setTimeout(completa, 500);
     } else {
-        width = width + 5;
-        progressBar.style.width = width + 'px';
+        larghezza = larghezza + 5;
+        progressBar.style.width = larghezza + 'px';
     }
 }
 
