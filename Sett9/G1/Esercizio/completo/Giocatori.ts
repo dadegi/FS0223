@@ -3,11 +3,11 @@ let gamer1: number = Math.floor((Math.random() * (100 - 1)) + 1);
 let gamer2: number = Math.floor((Math.random() * (100 - 1)) + 1);
 
 // dichiarazione function confronto passando parametri num1 e num2
-function confronto(num1, num2) {
+function confronto(num1: number, num2: number) {
 	// inizializzazione di numero
-	let numero = Math.floor((Math.random() * (100 - 1)) + 1);
+	let numero: number = Math.floor((Math.random() * (100 - 1)) + 1);
 	// inizializzazione di diff1 e diff2
-	let diff1 = Math.abs(numero - num1), diff2 = Math.abs(numero - num2);
+	let diff1: number = Math.abs(numero - num1), diff2 = Math.abs(numero - num2);
 	console.log('Numero casuale generato = ', numero);
 	console.log('Numero giocatore 1: ', gamer1);
 	console.log('Numero giocatore 2: ', gamer2);
