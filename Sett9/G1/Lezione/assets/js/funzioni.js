@@ -1,3 +1,4 @@
+"use strict";
 function persona(nome, cognome, eta) {
     if (eta) {
         return `Signor ${nome} ${cognome} di anni ${eta}`;

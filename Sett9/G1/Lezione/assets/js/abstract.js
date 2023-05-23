@@ -1,3 +1,4 @@
+"use strict";
 class Negozio {
     constructor(_maglie, _pantaloni, _scarpe) {
         this.maglie = _maglie;

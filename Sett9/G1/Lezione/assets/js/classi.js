@@ -1,3 +1,4 @@
+"use strict";
 class Studente {
     constructor(_nome, _cognome) {
         this.nome = _nome;

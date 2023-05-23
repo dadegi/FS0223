@@ -1,3 +1,4 @@
+"use strict";
 console.log('Hello World!');
 let nome = 'Mario';
 console.log(`Il tuo nome è ${nome}`);

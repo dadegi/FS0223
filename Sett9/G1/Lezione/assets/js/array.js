@@ -1,3 +1,4 @@
+"use strict";
 let mioArray = ['Pippo', 'Pluto', 'Paperino'];
 mioArray.push('Gastone');
 let arrayMisto = ['Pippo', 5];
