@@ -3,7 +3,7 @@
 interface Contatti {
     tel: string;
     email: string;
-    // constructor (_tel: string, _email: string) {
+    // constructor (_tel: string, _email: string) { // Costruttore commentato per trasformare le classi iniziali in interface
     //     this.tel = _tel;
     //     this.email = _email;
     // }
