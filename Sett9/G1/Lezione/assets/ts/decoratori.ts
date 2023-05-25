@@ -1,6 +1,6 @@
-function Logger (constructor: Function) { // 5 - funzione avviata dal decoratore
+function Logger (costruttore: Function) { // 5 - funzione avviata dal decoratore
     console.log('Logging...'); // 6 - Primo console.log
-    console.log(constructor); // 7 - Secondo console.log, che riceve come parametro il constructor della classe, lo stampa, poi esegue l'istanza della classe
+    console.log(costruttore); // 7 - Secondo console.log, che riceve come parametro il constructor della classe, lo stampa, poi esegue l'istanza della classe
 }
 
 @Logger // 4 - Decoratore collegato alla funzione col suo nome
