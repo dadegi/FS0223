@@ -1,5 +1,9 @@
 # Prima
 
+## Pacchetti utilizzati
+
+Ho usato Bootstrap da CDN (vedi file index.html), per la lettura dati del json local ho utilizzato json-server
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 
 ## Development server
