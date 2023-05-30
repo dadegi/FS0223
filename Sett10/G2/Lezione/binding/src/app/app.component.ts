@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersService } from './service/users.service';
+import { UsersService } from './service/users.service'; // Importazione del service users
 
 @Component({
     selector: 'app-root',
@@ -8,7 +8,7 @@ import { UsersService } from './service/users.service';
 })
 export class AppComponent {
     title = 'binding';
-    users = this.userSrv.users;
+    users = this.userSrv.users; // Utilizza l'array presente nel service users, importato, per passarlo al componente users
 
     constructor(private userSrv: UsersService) {}
 

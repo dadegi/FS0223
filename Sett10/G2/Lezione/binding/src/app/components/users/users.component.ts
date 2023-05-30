@@ -9,6 +9,7 @@ import { LogService } from 'src/app/service/log.service';
 })
 export class UsersComponent implements OnInit {
 
+    // Il componente riceve in input da app.component.html i valori di user e id che serviranno per chiamare i metodi dei service
     @Input() user: any;
     @Input() id!: number;
 
@@ -16,7 +17,7 @@ export class UsersComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    cambioStato(newStatus: string) {
+    cambioStato(newStatus: string) { // Il metodo cambioStato, chiamato dall'HTML, chiama i due metodi updateUser e logStatusChange presenti nei service importati
         this.userSrv.updateUser(this.id, newStatus);
         this.logSrv.logStatusChange(this.id, newStatus);
     }

@@ -1,3 +1,4 @@
+// Un service è un elemento di Angular generato per erogare metodi utilizzabili da più component; NON viene dichiarato nell'app.module
 import { Injectable } from '@angular/core';
 import { User } from './../models/user.interface';
 
