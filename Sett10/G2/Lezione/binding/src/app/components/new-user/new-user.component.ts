@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/service/users.service';
 })
 export class NewUserComponent implements OnInit {
 
-    nuovoNome: string = ''; // Nome della variabile che sarà collegata al campo di input presente nell'HTML
+    nuovoNome: string = 'Pippo'; // Nome della variabile che sarà collegata al campo di input presente nell'HTML; il valore già dichiarato sarà stampato nel campo di input, ma se viene modificato nel campo di input sarà rimandato alla variabile modificato (two way data binding)
 
     constructor(private userSrv: UsersService) {}
 
