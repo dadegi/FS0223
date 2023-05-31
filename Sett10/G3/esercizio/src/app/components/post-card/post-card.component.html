@@ -1,14 +1,14 @@
 <div [ngClass]="{
-        'bg-warning': post.type == 'news',
-        'bg-info': post.type == 'education',
-        'bg-dark': post.type == 'politic',
-        'text-white': post.type == 'politic'
+        'bg-warning': postInviato.type == 'news',
+        'bg-info': postInviato.type == 'education',
+        'bg-dark': postInviato.type == 'politic',
+        'text-white': postInviato.type == 'politic'
       }" class="card mb-4">
     <h5 class="card-header">Post</h5>
     <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <h5 class="card-title">{{ postInviato.title }}</h5>
         <p class="card-text">
-            {{ post.body }}
+            {{ postInviato.body }}
         </p>
         <ng-content></ng-content>
 
