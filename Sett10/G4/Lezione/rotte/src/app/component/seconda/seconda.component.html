@@ -1,0 +1,12 @@
+<h1 class="text-center">
+    Componente Seconda pagina
+</h1>
+<h3>
+    Questo component ha due children, seconda1 e seconda2; si attivano con i link sottostanti
+</h3>
+<div class="container d-flex justify-content-around">
+    <a class="btn btn-primary" [routerLink]="['seconda1']">Children 1</a>
+    <a class="btn btn-primary" [routerLink]="['seconda2']">Children 2</a>
+    <a class="btn btn-primary" [routerLink]="['/seconda']">Torna al component padre</a>
+</div>
+<router-outlet></router-outlet>
