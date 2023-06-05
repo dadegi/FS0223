@@ -30,9 +30,9 @@ export class UsersComponent implements OnInit {
             }, 1000);
         });
 
-        this.observer = observable.pipe(map((aumenta) => { // Il metodo pipe INFILA la subscription dell'observable in un flusso, che in questo caso è gestito con l'operatore map, che genera il nuovo valore modificando il valore precedente
-            this.conteggio = Number(aumenta);
-            return `Siamo al numero ${aumenta}`;
+        this.observer = observable.pipe(map((contaMomnentaneo) => { // Il metodo pipe INFILA la subscription dell'observable in un flusso, che in questo caso è gestito con l'operatore map, che genera il nuovo valore modificando il valore precedente
+            this.conteggio = Number(contaMomnentaneo);
+            return `Siamo al numero ${contaMomnentaneo}`;
         })).subscribe(numero => { // Sottoscrizione dell'observable, con il parametro numero che riceve il valore di conta di riga 21
             console.log(numero);
         },(error) => {
