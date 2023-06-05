@@ -13,12 +13,16 @@ export class TodosComponent implements OnInit {
     titoloTask: string | undefined;
 
     constructor(private todoSrv: TodosService) {
-        this.todoSrv.getTodo().then((todos: Todo[]) => {
-            this.tasks = todos;
-        });
+        this.recupera();
     }
 
     ngOnInit(): void {
+    }
+
+    recupera() {
+        this.todoSrv.getTodo().then((todos: Todo[]) => {
+            this.tasks = todos;
+        });
     }
 
     addTask() {
@@ -32,5 +36,6 @@ export class TodosComponent implements OnInit {
     async completeTask(todo: Todo, index: number) {
         await this.todoSrv.updateTodo({completed: true}, todo.id);
         this.tasks.splice(index, 1);
+        this.recupera();
     }
 }
