@@ -1,0 +1,22 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center h-100">
+    <ng-container *ngIf="tasks; else recupero">
+        <div *ngIf="tasks.length > 0; else noTask">
+            <div *ngFor="let task of tasks, let i = index">
+                <div>
+                    <h3>
+                        {{task.title}} <button class="btn btn-sm ms-1" (click)="deleteTask(task.id, i)">❌</button>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #recupero>
+        <h3>Recupero tasks...</h3>
+    </ng-template>
+    <ng-template #noTask>
+        <h3>Ops, non ci sono tasks!</h3>
+    </ng-template>
+
+
+</div>

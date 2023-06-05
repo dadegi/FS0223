@@ -49,6 +49,10 @@ export class PostsService {
         return this.posts;
     }
 
+    getPost(id: number) {
+        return this.posts.find((post) => post.id == id);
+    }
+
     updatePost(data: Partial<Post>, id: number) {
         this.posts = this.posts.map((post) =>
             post.id == id ? { ...post, ...data } : post
