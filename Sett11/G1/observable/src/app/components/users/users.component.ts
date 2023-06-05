@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
     constructor() {}
 
     ngOnInit(): void {
-        const observable = new Observable(osservatore => { // Observable
+        const observable = new Observable(osservatore => { // Observable che riceve come parametro chi lo osserverà (nel nostro caso sarà this.observer)
             let conta = 0;
             setInterval(() => {
                 osservatore.next(conta); // Next: metodo che consente all'Observable di ricevere la notifica del cambio di valore
@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
         this.observer = observable.pipe(map((aumenta) => { // Il metodo pipe INFILA la subscription dell'observable in un flusso, che in questo caso è gestito con l'operatore map, che genera il nuovo valore modificando il valore precedente
             this.conteggio = Number(aumenta);
             return `Siamo al numero ${aumenta}`;
-        })).subscribe(numero => { // Sottoscrizione dell'observable
+        })).subscribe(numero => { // Sottoscrizione dell'observable, con il parametro numero che riceve il valore di conta di riga 21
             console.log(numero);
         },(error) => {
             console.log(error);
