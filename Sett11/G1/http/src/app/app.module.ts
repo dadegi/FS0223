@@ -14,6 +14,7 @@ import { LogInterceptor } from './interceptors/log.interceptor';
         FormsModule,
         HttpClientModule
     ],
+    // Dichiamrazione nei providers (fornitori di servizi) dell'uso degli interceptors e dell'ordine d'uso; una volta dichiarati qui, gli interceptors intercettano TUTTE le chiamate HTTP per il solo fatto di esistere
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
