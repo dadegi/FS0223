@@ -63,6 +63,7 @@ export class AppComponent {
         this.user.secret = this.contenitoreForm.value.userInfo.secret;
         this.user.risposta = this.contenitoreForm.value.userInfo.risposta;
         this.user.sesso = this.contenitoreForm.value.userInfo.sesso;
+        console.log(this.user);
 
         this.contenitoreForm.reset();
     }
