@@ -13,19 +13,19 @@ import {
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'reactive';
+    title = 'Reactive';
 
-    contenitoreForm!: FormGroup;
     generi = ['uomo', 'donna'];
+    contenitoreForm!: FormGroup;
     usernameProibiti = ['Mario', 'Anna'];
 
     constructor(private fb: FormBuilder) {}
 
     validUsername = (formC: FormControl) => {
         if (this.usernameProibiti.includes(formC.value)) {
-            return { 'usernameProibito': true };
+            return { usernameProibito: true };
         } else {
-            return { 'usernameProibito': false };
+            return null;
         }
     };
 
@@ -33,33 +33,38 @@ export class AppComponent {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
         this.contenitoreForm = this.fb.group({
-            username: ['', [Validators.required, this.validUsername]],
-            email: ['', [Validators.required, Validators.email]],
+            userInfo: this.fb.group({
+                username: this.fb.control(null, [Validators.required,this.validUsername,]),
+                email: this.fb.control(null, [
+                    Validators.required,
+                    Validators.email,
+                ]),
+            }),
             genere: this.fb.control('donna'),
-            sports: this.fb.array([])
+            sports: this.fb.array([]),
         });
 
-        this.contenitoreForm.statusChanges.subscribe(stato => {
-            console.log(`Stato del form: ${stato}`);
+        this.contenitoreForm.valueChanges.subscribe((value) => {
+            console.log(value);
         });
     }
 
-    getErrorsC(nome: string, errore: string) {
-        return this.contenitoreForm.get(nome)?.errors![errore];
+    getErrorsC(name: string, error: string) {
+        return this.contenitoreForm.get(name)?.errors![error];
     }
 
-    getFormC(nome: string) {
-        return this.contenitoreForm.get(nome);
+    getFormC(name: string) {
+        return this.contenitoreForm.get(name);
     }
 
-    getSports() {
+    getSportsF() {
         return (this.contenitoreForm.get('sports') as FormArray).controls;
     }
 
     addSports() {
-        const controllo = this.fb.control(null);
-        (this.contenitoreForm.get('sports') as FormArray).push(controllo);
-        console.log(this.getSports());
+        const control = this.fb.control(null);
+        (this.contenitoreForm.get('sports') as FormArray).push(control);
+        console.log(this.getSportsF());
     }
 
     submitForm() {
