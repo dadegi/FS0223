@@ -1,0 +1,50 @@
+<div class="container mt-3">
+    <h1 class="text-center">Reactive Form</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="contenitoreForm">
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" formControlName="username">
+                        <span *ngIf="getFormC('username')?.invalid && getFormC('username')?.touched">
+                            <!-- Usiamo ng-container perché i due messaggi di errore sono alternativi -->
+                            <ng-container *ngIf="getErrorsC('username', 'required')">Campo Username
+                                obbligatorio
+                            </ng-container>
+                            <ng-container *ngIf="getErrorsC('username', 'usernameProibito')">Username non
+                                consentito
+                            </ng-container>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email">
+                        <span *ngIf="getFormC('email')?.pending">Sto controllando...</span>
+                        <span *ngIf="getFormC('email')?.invalid && getFormC('email')?.touched">
+                            <ng-container *ngIf="getErrorsC('email', 'required')">Campo email obbligatorio
+                            </ng-container>
+                            <ng-container *ngIf="getErrorsC('email', 'email')">Email non valida</ng-container>
+                        </span>
+                    </div>
+
+                <div class="radio" *ngFor="let genere of generi">
+                    <label>
+                        <input type="radio" formControlName="genere" [value]="genere">{{ genere }}
+                    </label>
+                </div>
+                <div formArrayName="sports" class="mb-3">
+                    <h3>I miei sports</h3>
+                    <button type="button" class="btn btn-success" (click)="addSports()">Aggiungi sport</button>
+                    <div class="form-group mb-2" *ngFor="let sportC of getSports(); let i = index">
+                        <input type="text" class="form-control" [formControlName]="i">
+                    </div>
+                </div>
+                <button type="submit" (click)="submitForm()" class="btn btn-primary"
+                    [disabled]="contenitoreForm.invalid">Invia</button>
+            </form>
+        </div>
+    </div>
+</div>
