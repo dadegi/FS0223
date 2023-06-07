@@ -1,5 +1,27 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "dadegi@gmail.com",
+      "password": "$2a$10$wvORONTqgaTsMLKNuxXkyOM9yicq03v5B7oA0xp3eX1FQvtmgp91C",
+      "nome": "Dario",
+      "cognome": "Del Giudice",
+      "id": 1
+    },
+    {
+      "email": "andrea@zucchetti.it",
+      "password": "$2a$10$UmOrFcWXdPlGlVILuejJ5uYWG9hikIC2/ZMmgkbysTQA8zvLoHhuC",
+      "nome": "Andrea",
+      "cognome": "Zucchetti",
+      "id": 2
+    },
+    {
+      "email": "artem@asauliak.org",
+      "password": "$2a$10$2DcMjU.IiqBkxbgXUAusu.yLjJeuFTOhzUT4QyaopXOIPILoC5NXy",
+      "nome": "Artem",
+      "cognome": "Asauliak",
+      "id": 3
+    }
+  ],
   "prodotti": [
     {
       "id": 1,
