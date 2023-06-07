@@ -52,6 +52,66 @@
       "nomeProdotto": "biscotti",
       "prezzo": 2.5,
       "id": 5
+    },
+    {
+      "codice": "A006",
+      "nomeProdotto": "Martini",
+      "prezzo": 9,
+      "id": 6
+    },
+    {
+      "codice": "A007",
+      "nomeProdotto": "Legumi vari",
+      "prezzo": 6,
+      "id": 7
+    },
+    {
+      "codice": "A007",
+      "nomeProdotto": "Altro",
+      "prezzo": 15,
+      "id": 8
+    },
+    {
+      "codice": "A010",
+      "nomeProdotto": "Whisky",
+      "prezzo": 15,
+      "id": 9
+    },
+    {
+      "codice": "A011",
+      "nomeProdotto": "Vodka",
+      "prezzo": 14,
+      "id": 10
+    },
+    {
+      "codice": "A012",
+      "nomeProdotto": "Mi sto ubriacanddo",
+      "prezzo": 25,
+      "id": 11
+    },
+    {
+      "codice": "A013",
+      "nomeProdotto": "Ti ho fregato",
+      "prezzo": 30,
+      "id": 12
+    },
+    {
+      "codice": "A015",
+      "nomeProdotto": "Ce la faccio anche con 1 secondo",
+      "prezzo": 150,
+      "id": 13
+    },
+    {
+      "codice": "A014",
+      "nomeProdotto": "Ancora un altro",
+      "prezzo": 20,
+      "id": 14
+    },
+    {
+      "codice": "A020",
+      "nomeProdotto": "Stiamo per finire",
+      "prezzo": 250,
+      "id": 15
     }
   ]
 }

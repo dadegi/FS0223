@@ -15,4 +15,8 @@ export class ProdottiService {
     recupera() {
         return this.http.get<Prodotto[]>(`${this.baseURL}prodotti`);
     }
+
+    aggiungi(data: Prodotto) {
+        return this.http.post<Prodotto>(`${this.baseURL}prodotti`, data);
+    }
 }

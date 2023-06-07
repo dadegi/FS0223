@@ -10,18 +10,17 @@ import { ProdottiService } from 'src/app/service/prodotti.service';
 })
 export class ProdottiComponent implements OnInit {
 
-    sub!: Subscription;
+    // sub!: Subscription;
     prodotti: Prodotto[] | undefined;
 
-    constructor(private prodottiSrv: ProdottiService) {}
-
-    ngOnInit(): void {
-        this.prodotti = this.recuperaProdotti();
+    constructor(private prodottiSrv: ProdottiService) {
     }
 
-    recuperaProdotti(): any {
-        this.sub = this.prodottiSrv.recupera().subscribe((prodotti: Prodotto[]) => {
-            this.prodotti = prodotti;
-        });
+    ngOnInit(): void {
+        setTimeout(() => {
+            this.prodottiSrv.recupera().subscribe((prodotti: Prodotto[]) => {
+                this.prodotti = prodotti;
+            });
+        }, 1000);
     }
 }
