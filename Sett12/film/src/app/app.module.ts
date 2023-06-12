@@ -10,11 +10,24 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { Error404Component } from './components/error404/error404.component';
+import { DetailsComponent } from './components/details/details.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const rotte: Route[] = [
     {
         path: '',
-        component: HomeComponent
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
+        children: [
+            {
+                path: 'login',
+                component: LoginComponent
+            }
+        ]
     },
     {
         path: 'movies',
@@ -22,7 +35,17 @@ const rotte: Route[] = [
     },
     {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        children: [
+            {
+                path: 'details',
+                component: DetailsComponent
+            },
+            {
+                path: 'favorites',
+                component: FavoritesComponent
+            }
+        ]
     },
     {
         path: 'login',
@@ -47,6 +70,8 @@ const rotte: Route[] = [
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        DetailsComponent,
+        FavoritesComponent,
     ],
     imports: [
         BrowserModule,
