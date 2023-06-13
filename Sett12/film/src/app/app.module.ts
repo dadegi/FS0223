@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -12,6 +13,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { Error404Component } from './components/error404/error404.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { ListaUtentiComponent } from './components/lista-utenti/lista-utenti.component';
 
 const rotte: Route[] = [
     {
@@ -32,6 +34,10 @@ const rotte: Route[] = [
     {
         path: 'movies',
         component: MoviesComponent
+    },
+    {
+        path: 'utenti',
+        component: ListaUtentiComponent
     },
     {
         path: 'profile',
@@ -72,9 +78,11 @@ const rotte: Route[] = [
         RegisterComponent,
         DetailsComponent,
         FavoritesComponent,
+        ListaUtentiComponent,
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         RouterModule.forRoot(rotte)
     ],
     providers: [],
