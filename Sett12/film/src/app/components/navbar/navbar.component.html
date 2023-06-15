@@ -11,13 +11,13 @@
                     <a class="nav-link active" aria-current="page" [routerLink]="['/']" routerLinkActive="active"
                         [routerLinkActiveOptions]="{exact: true}">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="utente">
                     <a class="nav-link" [routerLink]="['/movies']" routerLinkActive="active">Film</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="utente">
                     <a class="nav-link" [routerLink]="['/utenti']" routerLinkActive="active">Utenti</a>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" *ngIf="utente">
                     <a class="nav-link dropdown-toggle" [routerLink]="['/profile']" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Profilo
@@ -28,15 +28,16 @@
                         <li><a class="dropdown-item" [routerLink]="['/profile/favorites']">Preferiti</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!utente">
                     <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Accedi</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!utente">
                     <a class="nav-link" [routerLink]="['/register']" routerLinkActive="active">Registrati</a>
                 </li>
             </ul>
-            <div class="text-end">
-                <button type="button" id="logout" name="logout" class="btn btn-danger">Esci</button>
+            <div class="text-end" *ngIf="utente">
+                <h6>Benvenuto {{utente.user.name }} </h6>
+                <button type="button" id="logout" name="logout" class="btn btn-danger" (click)="logout()">Esci</button>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Route } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -14,6 +15,8 @@ import { Error404Component } from './components/error404/error404.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ListaUtentiComponent } from './components/lista-utenti/lista-utenti.component';
+import { AuthGuard } from './auth/auth.guard';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 const rotte: Route[] = [
     {
@@ -33,15 +36,23 @@ const rotte: Route[] = [
     },
     {
         path: 'movies',
-        component: MoviesComponent
+        component: MoviesComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'movies/:id',
+        component: MovieDetailsComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'utenti',
-        component: ListaUtentiComponent
+        component: ListaUtentiComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'profile',
         component: ProfileComponent,
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'details',
@@ -82,6 +93,7 @@ const rotte: Route[] = [
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         HttpClientModule,
         RouterModule.forRoot(rotte)
     ],

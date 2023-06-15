@@ -29,6 +29,12 @@
       "password": "$2a$10$dUc3jYtuRxxmnln0QZn.ZeJPDfdXmW/QCPKLmVJ31FiOXe1wZoir2",
       "name": "Gabriel",
       "id": 5
+    },
+    {
+      "email": "fabrizio@delgiudice.com",
+      "password": "$2a$10$Da6nRFvDE9FIfo.hmoi9L.h4mMyfaq/h/Cp0WckVFUeGyhOFNHrVS",
+      "name": "Fabrizio Del Giudice",
+      "id": 6
     }
   ],
   "favorites": [
