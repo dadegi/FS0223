@@ -12,28 +12,66 @@ import { Favourite } from 'src/app/models/favourite.interface';
     styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-
     movies!: Movie[];
     imageURL = environment.imageURL;
     utente!: Auth | null;
     favoriti!: Favourite[];
 
-    constructor(private movieSrv: MoviesService, private authSrv: AuthService) {
+    constructor(
+        private movieSrv: MoviesService,
+        private authSrv: AuthService
+    ) {}
+
+    ngOnInit(): void {
         this.authSrv.user$.subscribe((_utente) => {
-            this.utente = _utente
+            this.utente = _utente;
         });
         setTimeout(() => {
-            this.movieSrv.recuperaFilm().subscribe((films: Movie[]) => {
-                this.movies = films;
-            });
-            if (this.utente) {
-                this.movieSrv.recuperaFavoriti(this.utente.user.id).subscribe((likes: Favourite[]) => {
-                    this.favoriti = likes;
-                    console.log(this.favoriti);
-                });
-            }
+            this.recuperaFavoriti(this.utente!.user.id);
+            this.recuperaFilm();
         }, 1500);
     }
 
-    ngOnInit(): void {}
+    recuperaFilm(): void {
+        this.movieSrv.recuperaFilm().subscribe((films: Movie[]) => {
+            this.movies = films;
+        });
+    }
+
+    recuperaFavoriti(userId: number): void {
+        this.movieSrv
+            .recuperaFavoriti(userId)
+            .subscribe((likes: Favourite[]) => {
+                this.favoriti = likes;
+            });
+    }
+
+    aggiungiFavorito(idFilm: number): void {
+        const favorito: Favourite = {
+            userId: this.utente!.user.id,
+            movieId: idFilm,
+        };
+
+        this.movieSrv.aggiungiFavorito(favorito).subscribe(() => {
+            this.recuperaFavoriti(this.utente!.user.id);
+        });
+    }
+
+    eliminaFavorito(film: Movie): void {
+        const idFav = this.getIdFavorito(film);
+        if (idFav) {
+            this.movieSrv.rimuoviFavorito(idFav).subscribe(() => {
+                this.recuperaFavoriti(this.utente!.user.id);
+            });
+        }
+    }
+
+    isFavorito(film: Movie): boolean {
+        return this.favoriti.some((f) => f.movieId === film.id);
+    }
+
+    getIdFavorito(film: Movie): number | undefined {
+        const favorito = this.favoriti.find((f) => f.movieId === film.id);
+        return favorito?.id;
+    }
 }

@@ -4,6 +4,7 @@ import { Movie } from '../models/movie.interface';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Favourite } from '../models/favourite.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -24,5 +25,13 @@ export class MoviesService {
 
     dettaglioFilm(id: number) {
         return this.http.get<Movie>(`${this.baseUrl}movies-popular/${id}`);
+    }
+
+    aggiungiFavorito(favorito: Favourite) {
+        return this.http.post(`${this.baseUrl}favorites`, favorito);
+    }
+
+    rimuoviFavorito(favoritoId: number) {
+        return this.http.delete(`${this.baseUrl}favorites/${favoritoId}`);
     }
 }

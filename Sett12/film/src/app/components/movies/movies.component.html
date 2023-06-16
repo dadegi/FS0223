@@ -15,9 +15,7 @@
                         <h5 class="card-title">{{ movie.title }}</h5>
                     </div>
                 </a>
-                <button type="button" id="like" name="like" [ngClass]="{
-                    'bg-warning': movie.id === favoriti.movieId
-                }">👍</button>
+                <button type="button" (click)="isFavorito(movie) ? eliminaFavorito(movie) : aggiungiFavorito(movie.id)" [ngClass]="{'bg-danger': isFavorito(movie), 'bg-white': !isFavorito(movie)}">👍</button>
             </div>
         </div>
     </div>
