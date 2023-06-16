@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
         try {
             this.authSrv.login(form.value).subscribe();
             alert('Login effettuato!');
-            this.router.navigate(['/']);
+            setTimeout(() => {
+                this.router.navigate(['/movies']);
+            }, 500);
+
         } catch (error) {
             alert('Login errato');
             console.error(error);
