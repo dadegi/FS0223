@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from 'src/app/auth/auth.interface';
 import { AuthService } from 'src/app/auth/auth.service';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { AuthService } from 'src/app/auth/auth.service';
     styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+
+    isMenuCollapsed = true;
     utente!: Auth | null;
 
     constructor(private authSrv: AuthService) {}

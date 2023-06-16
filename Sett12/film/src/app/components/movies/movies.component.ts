@@ -57,8 +57,8 @@ export class MoviesComponent implements OnInit {
         });
     }
 
-    eliminaFavorito(film: Movie): void {
-        const idFav = this.getIdFavorito(film);
+    eliminaFavorito(filmId: number): void {
+        const idFav = this.getIdFavorito(filmId);
         if (idFav) {
             this.movieSrv.rimuoviFavorito(idFav).subscribe(() => {
                 this.recuperaFavoriti(this.utente!.user.id);
@@ -66,12 +66,12 @@ export class MoviesComponent implements OnInit {
         }
     }
 
-    isFavorito(film: Movie): boolean {
-        return this.favoriti.some((f) => f.movieId === film.id);
+    isFavorito(filmId: number): boolean {
+        return this.favoriti.some((f) => f.movieId === filmId);
     }
 
-    getIdFavorito(film: Movie): number | undefined {
-        const favorito = this.favoriti.find((f) => f.movieId === film.id);
+    getIdFavorito(filmId: number): number | undefined {
+        const favorito = this.favoriti.find((f) => f.movieId === filmId);
         return favorito?.id;
     }
 }

@@ -17,6 +17,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ListaUtentiComponent } from './components/lista-utenti/lista-utenti.component';
 import { AuthGuard } from './auth/auth.guard';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const rotte: Route[] = [
     {
@@ -90,12 +91,14 @@ const rotte: Route[] = [
         DetailsComponent,
         FavoritesComponent,
         ListaUtentiComponent,
+        MovieDetailsComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forRoot(rotte)
+        RouterModule.forRoot(rotte),
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent],

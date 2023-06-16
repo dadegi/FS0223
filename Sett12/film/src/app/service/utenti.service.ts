@@ -13,6 +13,10 @@ export class UtentiService {
     constructor(private http: HttpClient) {}
 
     recuperaUtenti() {
-        return this.http.get<Utente[]>(`${this.baseURL}users`)
+        return this.http.get<Utente[]>(`${this.baseURL}users`);
+    }
+
+    recuperaUtente(id: number) {
+        return this.http.get<Utente>(`${this.baseURL}users/${id}`);
     }
 }

@@ -29,8 +29,4 @@ export class MovieDetailsComponent implements OnInit {
             this.film = _film;
         });
     }
-
-    torna() {
-        this.router.navigate(['/movies']);
-    }
 }
