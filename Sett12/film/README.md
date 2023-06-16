@@ -1,6 +1,6 @@
 # Film
 
-Il progetto è stato creato utiilizzando [Angular CLI](https://github.com/angular/angular-cli) versione 14.2.11.
+Il progetto è stato creato utiilizzando [Angular CLI](https://v14.angular.io/docs) versione 14.2.11.
 
 ## Implementazione e avvio
 
