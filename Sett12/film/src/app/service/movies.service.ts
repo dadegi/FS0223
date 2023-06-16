@@ -4,7 +4,6 @@ import { Movie } from '../models/movie.interface';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Favourite } from '../models/favourite.interface';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',

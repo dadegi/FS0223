@@ -66,11 +66,9 @@ export class AuthService {
     }
 
     registra(data: {
-        nome: string,
-        cognome: string,
+        name: string,
         email: string,
         password: string,
-        corsi: number
     }) {
         return this.http.post(`${this.baseURL}register`, data);
     }

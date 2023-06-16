@@ -35,6 +35,12 @@
       "password": "$2a$10$Da6nRFvDE9FIfo.hmoi9L.h4mMyfaq/h/Cp0WckVFUeGyhOFNHrVS",
       "name": "Fabrizio Del Giudice",
       "id": 6
+    },
+    {
+      "email": "lorenzo@visconti.com",
+      "password": "$2a$10$69g/rjFo5nGk68yUq9E69eosWZBWErxFN00Fx43YLCErykyaLi6h2",
+      "name": "Lorenzo",
+      "id": 7
     }
   ],
   "favorites": [
@@ -107,6 +113,21 @@
       "userId": 2,
       "movieId": 635302,
       "id": 19
+    },
+    {
+      "userId": 6,
+      "movieId": 632357,
+      "id": 20
+    },
+    {
+      "userId": 6,
+      "movieId": 460465,
+      "id": 21
+    },
+    {
+      "userId": 7,
+      "movieId": 578701,
+      "id": 22
     }
   ],
   "genres": [
