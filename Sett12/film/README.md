@@ -10,7 +10,7 @@ Per il corretto funzionamento del progetto seguire i seguenti passaggi:
 2. npm i json-server json-server-auth
 3. npm i @auth0/angular-jwt
 4. npm i concurrently
-5. Implementare le seguenti riche nel package.json:
+5. Implementare le seguenti righe nel package.json:
 ##### "backend": "json-server-auth --watch db.json --port 3000",
 ##### "fullstack": "concurrently \"npm run backend\" \"npm run start\""
 7. ng add @ng-bootstrap/ng-bootstrap (per future implementazioni)
