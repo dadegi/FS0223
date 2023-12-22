@@ -14,4 +14,4 @@ Per il corretto funzionamento del progetto seguire i seguenti passaggi:
 ##### "backend": "json-server-auth --watch db.json --port 3000",
 ##### "fullstack": "concurrently \"npm run backend\" \"npm run start\""
 7. ng add @ng-bootstrap/ng-bootstrap (per future implementazioni)
-8. npm run full-stack (avvio del progetto)
+8. npm run fullstack (avvio del progetto)
